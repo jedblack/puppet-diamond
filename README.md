@@ -66,7 +66,7 @@ Note that you can include more than one of these at once.
       graphite_host  => 'graphite.example.com',
     }
 
-Using Hiera instead of Puppet manifests:
+Using Hiera and YAML instead of Puppet manifests:
 
 ```yaml
 ---
@@ -82,7 +82,7 @@ diamond::graphite_host: 'graphite.example.com'
 
 ## Configuring collectors
 
-Using Hiera:
+Using Hiera and YAML:
 
 ```yaml
 ---
