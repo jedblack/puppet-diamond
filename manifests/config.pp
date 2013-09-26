@@ -1,6 +1,6 @@
-class diamond::config inherits diamond {
-  file { $config:
+class diamond::config {
+  file { $diamond::config:
     ensure  => present,
-    content => template($config_template),
+    content => template($diamond::config_template),
   }
 }
