@@ -1,6 +1,6 @@
 # == Class: diamond
 #
-# A basic module to manage diamond, stats collection daemon for Graphite
+# A module to manage Diamond, a Python daemon that collects system metrics and publishes them to Graphite (and others).
 #
 # === Parameters
 # [*collector_config_basedir*]
