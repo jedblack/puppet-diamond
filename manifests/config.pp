@@ -6,6 +6,6 @@ class diamond::config {
   $librato_apikey = $diamond::librato_apikey
   file { '/etc/diamond/diamond.conf':
     ensure  => present,
-    content => template('diamond/etc/diamond/diamond.conf'),
+    content => template('diamond/etc/diamond/diamond.conf.erb'),
   }
 }

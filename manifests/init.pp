@@ -37,6 +37,7 @@ class diamond(
   $start          = $diamond::params::start,
   $version        = $diamond::params::version,
 ) inherits diamond::params {
+
   class{'diamond::install': } ->
   class{'diamond::config': } ~>
   class{'diamond::service': } ->
