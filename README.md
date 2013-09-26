@@ -94,6 +94,8 @@ This example enables the CPUCollector and DiskSpaceCollector, and customizes the
 ## Mandatory requirements
 
 * Access to a package repository from which `diamond` can be installed (e.g. `yum install diamond` must work).
+* Puppet 3.0+
+* Ruby 1.9 (preferred) or 1.8
 
 
 <a name="optional-reqs"></a>
