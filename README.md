@@ -1,6 +1,6 @@
 A Puppet module for managing the installation and configuration of [Diamond](https://github.com/BrightcoveOS/Diamond).
 
-[![Build Status](https://secure.travis-ci.org/miguno/puppet-diamond.png)](https://travis-ci.org/miguno/puppet-diamond)
+[![Build Status](https://travis-ci.org/miguno/puppet-diamond.png?branch=master)](https://travis-ci.org/miguno/puppet-diamond)
 
 ---
 
