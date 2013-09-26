@@ -68,7 +68,7 @@ Note that you can include more than one of these at once.
 
 Using Hiera instead of Puppet manifests:
 
-```
+```yaml
 ---
 classes:
   - diamond
