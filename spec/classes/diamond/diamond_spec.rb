@@ -8,7 +8,7 @@ describe 'diamond', :type => :class do
     it { should create_class('diamond::install')}
     it { should create_class('diamond::service')}
 
-    it { should contain_file('/etc/diamond/diamond.conf').with_content(/interval = 30/)}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^interval = 30/)}
 
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.librato.LibratoHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.graphite.GraphiteHandler/)}
@@ -20,7 +20,7 @@ describe 'diamond', :type => :class do
 
   context 'with a custom graphite host' do
     let(:params) { {'graphite_host' => 'graphite.example.com'} }
-    it { should contain_file('/etc/diamond/diamond.conf').with_content(/host = graphite.example.com/)}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^host = graphite.example.com/)}
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.graphite.GraphiteHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.librato.LibratoHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.riemann.RiemannHandler/)}
@@ -29,7 +29,7 @@ describe 'diamond', :type => :class do
 
   context 'with a riemann host' do
     let(:params) { {'riemann_host' => 'riemann.example.com'} }
-    it { should contain_file('/etc/diamond/diamond.conf').with_content(/host = riemann.example.com/)}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^host = riemann.example.com/)}
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.riemann.RiemannHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.librato.LibratoHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.graphite.GraphiteHandler/)}
@@ -39,8 +39,8 @@ describe 'diamond', :type => :class do
   context 'with librato settings' do
     let(:params) { {'librato_user' => 'bob', 'librato_apikey' => 'jim'} }
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.librato.LibratoHandler/)}
-    it { should contain_file('/etc/diamond/diamond.conf').with_content(/user = bob/)}
-    it { should contain_file('/etc/diamond/diamond.conf').with_content(/apikey = jim/)}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^user = bob/)}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^apikey = jim/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.graphite.GraphiteHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.riemann.RiemannHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/^\s*hostname =/)}
@@ -49,9 +49,9 @@ describe 'diamond', :type => :class do
   context 'with librato and graphite settings' do
     let(:params) { {'graphite_host' => 'graphite.example.com', 'librato_user' => 'bob', 'librato_apikey' => 'jim'} }
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.librato.LibratoHandler/)}
-    it { should contain_file('/etc/diamond/diamond.conf').with_content(/user = bob/)}
-    it { should contain_file('/etc/diamond/diamond.conf').with_content(/apikey = jim/)}
-    it { should contain_file('/etc/diamond/diamond.conf').with_content(/host = graphite.example.com/)}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^user = bob/)}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^apikey = jim/)}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^host = graphite.example.com/)}
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.graphite.GraphiteHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.riemann.RiemannHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/^\s*hostname =/)}
