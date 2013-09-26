@@ -28,15 +28,15 @@
 #   Where to find the riemann server
 #
 class diamond(
-  $version = 'present',
-  $enable = true,
-  $start = true,
-  $interval = 30,
-  $librato_user = false,
-  $librato_apikey = false,
-  $graphite_host = false,
-  $riemann_host = false,
-) {
+  $enable         = $diamond::params::enable,
+  $graphite_host  = $diamond::params::graphite_host,
+  $interval       = $diamond::params::interval,
+  $librato_user   = $diamond::params::librato_user,
+  $librato_apikey = $diamond::params::librato_apikey,
+  $riemann_host   = $diamond::params::riemann_host,
+  $start          = $diamond::params::start,
+  $version        = $diamond::params::version,
+) inherits diamond::params {
   class{'diamond::install': } ->
   class{'diamond::config': } ~>
   class{'diamond::service': } ->
