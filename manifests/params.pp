@@ -1,10 +1,10 @@
 class diamond::params {
   $enable         = true
-  $graphite_host  = false
+  $graphite_host  = undef
   $interval       = 30
-  $librato_user   = false
-  $librato_apikey = false
-  $riemann_host   = false
+  $librato_user   = undef
+  $librato_apikey = undef
+  $riemann_host   = undef
   $start          = true
   $version        = 'present'
 }
