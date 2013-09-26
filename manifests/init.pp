@@ -66,6 +66,21 @@ class diamond(
   $version         = $diamond::params::version,
 ) inherits diamond::params {
 
+  validate_absolute_path($collector_config_basedir)
+  validate_string($collector_config_template)
+  validate_absolute_path($config)
+  validate_string($config_template)
+  validate_bool($enable)
+  validate_string($graphite_host)
+  validate_string($librato_user)
+  validate_string($librato_apikey)
+  validate_string($package_name)
+  validate_string($riemann_host)
+  validate_absolute_path($run_directory)
+  validate_string($service_name)
+  validate_bool($start)
+  validate_string($version)
+
   class{'diamond::install': } ->
   class{'diamond::config': } ~>
   class{'diamond::service': } ->
