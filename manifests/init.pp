@@ -21,6 +21,10 @@
 # [*graphite_host*]
 #   Where to find the graphite server
 #
+# [*hostname*]
+#   Hardcode an hostname for the collector path rather then determining one automatically.
+#   Keep in mind, periods are seperators in Graphite.
+#
 # [*interval*]
 #   How often should metrics be collected and sent to Graphite
 #
