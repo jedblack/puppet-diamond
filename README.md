@@ -70,3 +70,9 @@ libraries not currently installed by this module.
       provider => pip,
     }
 
+
+# Setting up a local development environment
+
+After cloning this git repository you only need to run:
+
+    $ ./bootstrap
