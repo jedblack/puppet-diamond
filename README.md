@@ -22,6 +22,9 @@ the Graphite host and polling interval. So you can also do:
       interval      => 10,
     }
 
+
+### Configuring handlers
+
 Diamond supports a number of different handlers, for the moment this module supports only the Graphite, Librato and
 Riemann handers.  Pull request happily accepted to add others.
 
@@ -46,6 +49,21 @@ Note that you can include more than one of these at once.
       riemann_host   => 'riemann.example.com',
       graphite_host  => 'graphite.example.com',
     }
+
+
+### Configuring collectors
+
+With Hiera:
+
+```yaml
+diamond::collectors:
+  CPUCollector: {}
+    options:
+      path: cpu
+  DiskSpaceCollector: {}
+```
+
+This example enables the CPUCollector and DiskSpaceCollector, and customizes the former to use `path = cpu`.
 
 
 # Requirements

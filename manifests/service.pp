@@ -7,4 +7,3 @@ class diamond::service {
     hasrestart => true,
   }
 }
-

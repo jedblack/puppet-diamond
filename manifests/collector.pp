@@ -1,5 +1,5 @@
 define diamond::collector (
-  $options
+  $options = undef,
 ) {
 
   file {"${diamond::collector_config_basedir}/${name}.conf":
