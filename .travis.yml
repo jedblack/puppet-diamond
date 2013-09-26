@@ -1,3 +1,7 @@
+# Prevent bundle install to use "--deployment", because it will lead to Gemfile.lock conflicts.
+# See https://groups.google.com/forum/#!msg/travis-ci/XID21_FwgX8/Dbiv3wDUTZwJ
+bundler_args: ""
+
 language: ruby
 rvm:
   - 1.9.3
