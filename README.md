@@ -76,3 +76,13 @@ libraries not currently installed by this module.
 After cloning this git repository you only need to run:
 
     $ ./bootstrap
+
+
+## Running tests
+
+    $ rake spec
+
+
+## Running lint
+
+    $ rake lint
