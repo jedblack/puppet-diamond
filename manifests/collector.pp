@@ -2,7 +2,7 @@ define diamond::collector (
   $options
 ) {
 
-  file {"/etc/diamond/collectors/${name}.conf":
-    content => template('diamond/etc/diamond/collectors/collector.conf.erb')
+  file {"${diamond::collector_config_basedir}/${name}.conf":
+    content => template($diamond::collector_config_template),
   }
 }

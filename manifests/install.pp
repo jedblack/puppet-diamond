@@ -1,8 +1,8 @@
 class diamond::install inherits diamond {
-  package { 'diamond':
+  package { $package_name:
     ensure  => $version,
   }
-  file { '/var/run/diamond':
+  file { $run_directory:
     ensure => directory,
   }
 }
