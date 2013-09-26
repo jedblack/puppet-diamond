@@ -55,6 +55,7 @@ class diamond(
   $config_template = $diamond::params::config_template,
   $enable          = $diamond::params::enable,
   $graphite_host   = $diamond::params::graphite_host,
+  $hostname        = $diamond::params::hostname,
   $interval        = $diamond::params::interval,
   $librato_user    = $diamond::params::librato_user,
   $librato_apikey  = $diamond::params::librato_apikey,
@@ -72,6 +73,7 @@ class diamond(
   validate_string($config_template)
   validate_bool($enable)
   validate_string($graphite_host)
+  validate_string($hostname)
   validate_string($librato_user)
   validate_string($librato_apikey)
   validate_string($package_name)

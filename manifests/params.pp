@@ -5,6 +5,7 @@ class diamond::params {
   $config_template = 'diamond/etc/diamond/diamond.conf.erb'
   $enable          = true
   $graphite_host   = undef
+  $hostname        = undef
   $interval        = 30
   $librato_user    = undef
   $librato_apikey  = undef
