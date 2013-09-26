@@ -23,6 +23,7 @@ describe 'diamond', :type => :class do
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/host = graphite.example.com/)}
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.graphite.GraphiteHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.librato.LibratoHandler/)}
+    it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.riemann.RiemannHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/^\s*hostname =/)}
   end
 
@@ -41,6 +42,7 @@ describe 'diamond', :type => :class do
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/user = bob/)}
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/apikey = jim/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.graphite.GraphiteHandler/)}
+    it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.riemann.RiemannHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/^\s*hostname =/)}
   end
 
@@ -51,6 +53,7 @@ describe 'diamond', :type => :class do
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/apikey = jim/)}
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/host = graphite.example.com/)}
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.graphite.GraphiteHandler/)}
+    it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/diamond.handler.riemann.RiemannHandler/)}
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/^\s*hostname =/)}
   end
 
