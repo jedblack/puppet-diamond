@@ -1,8 +1,8 @@
-class diamond::service {
-  $ensure = $diamond::start ? {true => running, default => stopped}
+class diamond::service inherits diamond {
+  $ensure = $start ? {true => running, default => stopped}
   service { 'diamond':
     ensure     => $ensure,
-    enable     => $diamond::enable,
+    enable     => $enable,
     hasstatus  => true,
     hasrestart => true,
   }
