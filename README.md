@@ -66,14 +66,29 @@ Note that you can include more than one of these at once.
       graphite_host  => 'graphite.example.com',
     }
 
+Using Hiera instead of Puppet manifests:
+
+```
+---
+classes:
+  - diamond
+
+# Configure Diamond to send metrics to the Graphite host 'graphite.example.com'
+diamond::graphite_host: 'graphite.example.com'
+```
+
 
 <a name="collectors"></a>
 
 ## Configuring collectors
 
-With Hiera:
+Using Hiera:
 
 ```yaml
+---
+classes:
+  - diamond
+
 diamond::collectors:
   CPUCollector: {}
     options:
