@@ -1,5 +1,5 @@
 name          'puppet-diamond'
-version       '1.0.0'
+version       '1.0.1'
 author        'miguno'
 license       'Apache License, Version 2.0'
 summary       'Module to manage the Diamond stats collection tool (based on module by garethr)'
