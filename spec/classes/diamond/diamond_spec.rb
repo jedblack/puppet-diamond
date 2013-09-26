@@ -69,7 +69,7 @@ describe 'diamond', :type => :class do
 
   context 'with a custom polling interval' do
     let(:params) { {'interval' => 10} }
-    it { should contain_file('/etc/diamond/diamond.conf').with_content(/interval = 10/)}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^interval = 10/)}
   end
 
   context 'with service instructions' do
