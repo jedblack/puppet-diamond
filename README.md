@@ -1,21 +1,20 @@
-A Puppet module for managing the installation and configuration of
-[Diamond](https://github.com/BrightcoveOS/Diamond).
+A Puppet module for managing the installation and configuration of [Diamond](https://github.com/BrightcoveOS/Diamond).
 
-[![Build
-Status](https://secure.travis-ci.org/miguno/puppet-diamond.png)](https://travis-ci.org/miguno/puppet-diamond)
+[![Build Status](https://secure.travis-ci.org/miguno/puppet-diamond.png)](https://travis-ci.org/miguno/puppet-diamond)
+
 
 # Usage
 
-For experimenting you're probably fine just with:
+For experimenting you are probably fine just with:
 
     include diamond
 
-This installs diamond but doesn't ship the metrics anywhere, it just
-runs the archive handler.
+This installs diamond but does not ship the metrics anywhere, it just runs the archive handler.
+
 
 ## Configuration
 
-This module currently exposes a few configurable options, for example 
+This module currently exposes a few configurable options, for example
 the Graphite host and polling interval. So you can also do:
 
     class { 'diamond':
@@ -23,9 +22,8 @@ the Graphite host and polling interval. So you can also do:
       interval      => 10,
     }
 
-Diamond supports a number of different handlers, for the moment this
-module supports only the Graphite, Librato and Riemann handers. Pull request
-happily accepted to add others.
+Diamond supports a number of different handlers, for the moment this module supports only the Graphite, Librato and
+Riemann handers.  Pull request happily accepted to add others.
 
 With Librato:
 
@@ -49,17 +47,17 @@ Note that you can include more than one of these at once.
       graphite_host  => 'graphite.example.com',
     }
 
-# Optional requirements
 
-Diamond appears not to have a canonical package repository I could find
-or a PPA or similar. PyPi has a record but not source or binary
-packages. So this module can make use of my own personal debian package
-repository. This is installed with the
-[garethr](https://github.com/garethr/garethr-garethr) module if needed.
-Alernatively host your own package repository.
+# Requirements
 
-The Riemann and Librato handlers require some additional Python
-libraries not currently installed by this module.
+## Mandatory requirements
+
+* Access to a package repository from which `diamond` can be installed (e.g. `yum install diamond` must work).
+
+
+## Optional requirements
+
+The Riemann and Librato handlers require some additional Python libraries not currently installed by this module.
 
     package {[
       'simplejson',
