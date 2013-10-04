@@ -17,12 +17,16 @@ class diamond::params {
   $version         = 'present'
 
   case $::operatingsystem {
-    'CentOS', 'Fedora', 'RedHat', 'Amazon' ,'Scientific': {
-      # TODO: Try to auto-detect location if possible
+    'CentOS', 'Fedora', 'RedHat', 'Amazon', 'Scientific', 'Debian', 'Ubuntu': {
+      # This is indeed the default location for the OS'es listed above.
       $collectors_path = '/usr/share/diamond/collectors'
     }
     default: {
-      fail("'${module_name}' does not support operating system '${::operatingsystem}'")
+      # We must set a default value because Travis CI apparently reports '' as $::operatingsystem.
+      # This location is guessed, even though we use the same value as for CentOS etc.
+      $collectors_path = '/usr/share/diamond/collectors'
+      warning("'${module_name}' does not really support operating system '${::operatingsystem}'")
+      warning("Setting '\$collectors_path' to ${collectors_path} but this may be wrong!")
     }
   }
 
