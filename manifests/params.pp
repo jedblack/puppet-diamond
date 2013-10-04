@@ -15,4 +15,15 @@ class diamond::params {
   $service_name    = 'diamond'
   $start           = true
   $version         = 'present'
+
+  case $::operatingsystem {
+    'CentOS', 'Fedora', 'RedHat', 'Amazon' ,'Scientific': {
+      # TODO: Try to auto-detect location if possible
+      $collectors_path = '/usr/share/diamond/collectors'
+    }
+    default: {
+      fail("'${module_name}' does not support operating system '${::operatingsystem}'")
+    }
+  }
+
 }

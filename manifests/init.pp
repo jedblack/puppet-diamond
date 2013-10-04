@@ -55,6 +55,7 @@
 class diamond(
   $collector_config_basedir  = $diamond::params::collector_config_basedir,
   $collector_config_template = $diamond::params::collector_config_template,
+  $collectors_path = $diamond::params::collectors_path,
   $config          = $diamond::params::config,
   $config_template = $diamond::params::config_template,
   $enable          = $diamond::params::enable,
@@ -73,6 +74,7 @@ class diamond(
 
   validate_absolute_path($collector_config_basedir)
   validate_string($collector_config_template)
+  validate_absolute_path($collectors_path)
   validate_absolute_path($config)
   validate_string($config_template)
   validate_bool($enable)
