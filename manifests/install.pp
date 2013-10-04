@@ -5,7 +5,7 @@ class diamond::install {
   file { $diamond::run_directory:
     ensure => directory,
   }
-  file { "${diamond::collectors_path}/systemstat/systemstat.py":
+  file { "${diamond::collectors_path}/systemstat":
     ensure  => directory,
     owner   => 'root',
     group   => 'root',
