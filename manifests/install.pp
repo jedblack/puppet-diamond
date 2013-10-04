@@ -18,6 +18,6 @@ class diamond::install {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    require => File["${diamond::collectors_path}/systemstat/systemstat.py"],
+    require => File["${diamond::collectors_path}/systemstat"],
   }
 }
