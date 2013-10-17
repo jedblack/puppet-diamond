@@ -6,8 +6,8 @@ else
   puppetversion = ['~> 3.0.1']
 end
 
-gem "rake"
-gem "puppet", puppetversion
-gem "puppet-lint"
-gem "rspec-puppet"
-gem "puppetlabs_spec_helper"
+gem 'rake'
+gem 'puppet', puppetversion
+gem 'puppet-lint'
+gem 'rspec-puppet'
+gem 'puppetlabs_spec_helper'
