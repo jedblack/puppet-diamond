@@ -103,6 +103,8 @@ This example enables the CPUCollector and DiskSpaceCollector, and customizes the
 
 # Requirements
 
+_Tested on RHEL/CentOS 6._
+
 
 <a name="mandatory-reqs"></a>
 
