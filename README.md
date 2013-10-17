@@ -135,7 +135,7 @@ The Riemann and Librato handlers require some additional Python libraries not cu
 
 After cloning this git repository you only need to run:
 
-    $ ./bootstrap
+    $ ./bootstrap.sh
 
 
 <a name="tests"></a>
