@@ -16,6 +16,7 @@ Table of Contents
 * <a href="#development-enviroment">Setting up a local development environment</a>
     * <a href="#tests">Running tests</a>
     * <a href="#lint">Running lint</a>
+* <a href="#credits">Credits</a>
 
 ---
 
@@ -153,3 +154,11 @@ After cloning this git repository you only need to run:
 ## Running lint
 
     $ rake lint
+
+
+<a name="credits"></a>
+
+# Credits
+
+This module is based on -- and a fork of -- the great work done by [garethr](https://github.com/garethr/garethr-diamond)
+and [otherinbox](https://github.com/otherinbox/puppet-diamond).
