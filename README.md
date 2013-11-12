@@ -1,6 +1,7 @@
 # puppet-diamond [![Build Status](https://travis-ci.org/miguno/puppet-diamond.png?branch=master)](https://travis-ci.org/miguno/puppet-diamond)
 
-A Puppet module for managing the installation and configuration of [Diamond](https://github.com/BrightcoveOS/Diamond).
+A Wirbelsturm-compatible Puppet module for managing the installation and configuration of
+[Diamond](https://github.com/BrightcoveOS/Diamond).
 
 ---
 
