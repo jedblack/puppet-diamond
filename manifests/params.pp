@@ -1,6 +1,7 @@
 class diamond::params {
-  $collector_config_basedir  = '/etc/diamond/collectors'
-  $collector_config_template = 'diamond/etc/diamond/collectors/collector.conf.erb'
+  $archive_log_retention_days = 7
+  $collector_config_basedir   = '/etc/diamond/collectors'
+  $collector_config_template  = 'diamond/etc/diamond/collectors/collector.conf.erb'
   $config          = '/etc/diamond/diamond.conf'
   $config_template = 'diamond/etc/diamond/diamond.conf.erb'
   $enable          = true
@@ -9,6 +10,7 @@ class diamond::params {
   $interval        = 30
   $librato_user    = undef
   $librato_apikey  = undef
+  $log_retention_days         = 7
   $package_name    = 'diamond'
   $riemann_host    = undef
   $run_directory   = '/var/run/diamond'

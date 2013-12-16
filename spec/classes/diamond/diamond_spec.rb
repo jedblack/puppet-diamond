@@ -57,6 +57,17 @@ describe 'diamond', :type => :class do
     it { should_not contain_file('/etc/diamond/diamond.conf').with_content(/^\s*hostname =/)}
   end
 
+  context 'without explicit log retention settings' do
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(%r"^args = \('/var/log/diamond/diamond.log', 'midnight', 1, 7\)")}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^days = 7/)}
+  end
+
+  context 'with log retention settings' do
+    let(:params) { {'log_retention_days' => 42, 'archive_log_retention_days' => 365 } }
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(%r"^args = \('/var/log/diamond/diamond.log', 'midnight', 1, 42\)")}
+    it { should contain_file('/etc/diamond/diamond.conf').with_content(/^days = 365/)}
+  end
+
   context 'with a custom hostname' do
     let(:params) { {'hostname' => 'myhost1'} }
     it { should contain_file('/etc/diamond/diamond.conf').with_content(/^hostname = myhost1/)}

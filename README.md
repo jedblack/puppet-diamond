@@ -10,6 +10,7 @@ Table of Contents
 * <a href="#usage">Usage and configuration</a>
     * <a href="#handlers">Configuring handlers</a>
     * <a href="#collectors">Configuring collectors</a>
+    * <a href="#logging">Configuring logging</a>
 * <a href="#requirements">Requirements</a>
     * <a href="#mandatory-reqs">Mandatory requirements</a>
     * <a href="#optional-reqs">Optional requirements</a>
@@ -99,6 +100,24 @@ diamond::collectors:
 ```
 
 This example enables the CPUCollector and DiskSpaceCollector, and customizes the former to use `path = cpu`.
+
+
+<a name="logging"></a>
+
+## Configuring logging
+
+Using Hiera and YAML:
+
+```yaml
+---
+classes:
+  - diamond
+
+diamond::log_retention_days: 3
+diamond::archive_log_retention_days: 4
+```
+
+This example keeps rolled `diamond.log` files for three days, and rolled `archive.log` files for four days.
 
 
 <a name="requirements"></a>

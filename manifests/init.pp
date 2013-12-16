@@ -3,6 +3,9 @@
 # A module to manage Diamond, a Python daemon that collects system metrics and publishes them to Graphite (and others).
 #
 # === Parameters
+# [*archive_log_retention_days*]
+#   How many days to keep archive.log files.
+#
 # [*collector_config_basedir*]
 #   The base directory under which collector configs will be deployed.
 #
@@ -34,6 +37,9 @@
 # [*librato_apikey*]
 #   Your Librato apikey
 #
+# [*log_retention_days*]
+#   How many days to keep diamond.log files.
+#
 # [*package_name*]
 #   The name of the diamond package to install.
 #
@@ -53,8 +59,9 @@
 #   The package version to install
 #
 class diamond(
-  $collector_config_basedir  = $diamond::params::collector_config_basedir,
-  $collector_config_template = $diamond::params::collector_config_template,
+  $archive_log_retention_days = $diamond::params::archive_log_retention_days,
+  $collector_config_basedir   = $diamond::params::collector_config_basedir,
+  $collector_config_template  = $diamond::params::collector_config_template,
   $collectors_path = $diamond::params::collectors_path,
   $config          = $diamond::params::config,
   $config_template = $diamond::params::config_template,
@@ -64,6 +71,7 @@ class diamond(
   $interval        = $diamond::params::interval,
   $librato_user    = $diamond::params::librato_user,
   $librato_apikey  = $diamond::params::librato_apikey,
+  $log_retention_days         = $diamond::params::log_retention_days,
   $package_name    = $diamond::params::package_name,
   $riemann_host    = $diamond::params::riemann_host,
   $run_directory   = $diamond::params::run_directory,
@@ -72,6 +80,9 @@ class diamond(
   $version         = $diamond::params::version,
 ) inherits diamond::params {
 
+  if !is_integer($archive_log_retention_days) {
+    fail('The $archive_log_retention_days parameter must be an integer number')
+  }
   validate_absolute_path($collector_config_basedir)
   validate_string($collector_config_template)
   validate_absolute_path($collectors_path)
@@ -82,6 +93,9 @@ class diamond(
   validate_string($hostname)
   validate_string($librato_user)
   validate_string($librato_apikey)
+  if !is_integer($log_retention_days) {
+    fail('The $log_retention_days parameter must be an integer number')
+  }
   validate_string($package_name)
   validate_string($riemann_host)
   validate_absolute_path($run_directory)
