@@ -65,7 +65,7 @@ class diamond(
   $collectors_path = $diamond::params::collectors_path,
   $config          = $diamond::params::config,
   $config_template = $diamond::params::config_template,
-  $enable          = $diamond::params::enable,
+  $enable          = hiera('diamond::enable', true),
   $graphite_host   = $diamond::params::graphite_host,
   $hostname        = $diamond::params::hostname,
   $interval        = $diamond::params::interval,
@@ -76,7 +76,7 @@ class diamond(
   $riemann_host    = $diamond::params::riemann_host,
   $run_directory   = $diamond::params::run_directory,
   $service_name    = $diamond::params::service_name,
-  $start           = $diamond::params::start,
+  $start           = hiera('diamond::start', true),
   $version         = $diamond::params::version,
 ) inherits diamond::params {
 

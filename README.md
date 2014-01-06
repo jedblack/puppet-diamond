@@ -17,6 +17,7 @@ Table of Contents
 * <a href="#development-enviroment">Setting up a local development environment</a>
     * <a href="#tests">Running tests</a>
     * <a href="#lint">Running lint</a>
+* <a href="#notes">Notes</a>
 * <a href="#credits">Credits</a>
 
 ---
@@ -173,6 +174,16 @@ After cloning this git repository you only need to run:
 ## Running lint
 
     $ rake lint
+
+
+<a name="notes"></a>
+
+# Notes
+
+* We are using a workaround for Puppet bugs [#17474](http://projects.puppetlabs.com/issues/17474) and
+  [#17105](http://projects.puppetlabs.com/issues/17105), which affects the handling of boolean values in Hiera/YAML
+  via Puppet data bindings.  This is the reason why you see code such as `hiera('diamond::enable', true)` when
+  defining Puppet class parameters.
 
 
 <a name="credits"></a>
