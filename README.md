@@ -1,6 +1,6 @@
 # puppet-diamond [![Build Status](https://travis-ci.org/miguno/puppet-diamond.png?branch=master)](https://travis-ci.org/miguno/puppet-diamond)
 
-A Wirbelsturm-compatible Puppet module for managing the installation and configuration of
+[Wirbelsturm](https://github.com/miguno/wirbelsturm)-compatible [Puppet](http://puppetlabs.com/) module to deploy
 [Diamond](https://github.com/BrightcoveOS/Diamond).
 
 ---
