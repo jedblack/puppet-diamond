@@ -6,7 +6,8 @@ else
   puppetversion = ['~> 3.0.1']
 end
 
-gem 'rake'
+# Rake 10.2.0+ requires Ruby >= 1.9
+gem 'rake', '< 10.2.0' if RUBY_VERSION < '1.9.0'
 gem 'puppet', puppetversion
 gem 'puppet-lint'
 gem 'rspec-puppet'
