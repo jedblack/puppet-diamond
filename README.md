@@ -7,6 +7,7 @@
 
 Table of Contents
 
+* <a href="#installation">Installation</a>
 * <a href="#usage">Usage and configuration</a>
     * <a href="#handlers">Configuring handlers</a>
     * <a href="#collectors">Configuring collectors</a>
