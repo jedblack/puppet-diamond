@@ -22,6 +22,32 @@ Table of Contents
 
 ---
 
+<a name="installation"></a>
+
+# Installation
+
+It is recommended to use [librarian-puppet](https://github.com/rodjek/librarian-puppet) to add this module to your
+Puppet setup.
+
+Add the following lines to your `Puppetfile`:
+
+```
+# Add the stdlib dependency as hosted on public Puppet Forge.
+#
+# We intentionally do not include the stdlib dependency in our Modulefile to make it easier for users who decided to
+# use internal copies of stdlib so that their deployments are not coupled to the availability of PuppetForge.  While
+# there are tools such as puppet-library for hosting internal forges or for proxying to the public forge, not everyone
+# is actually using those tools.
+mod 'puppetlabs/stdlib'
+
+# Add the puppet-diamond module
+mod 'diamond',
+  :git => 'https://github.com/miguno/puppet-diamond.git'
+```
+
+Then use librarian-puppet to install (or update) the Puppet modules.
+
+
 <a name="usage"></a>
 
 # Usage and configuration
